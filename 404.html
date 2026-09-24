@@ -23,21 +23,36 @@
     }
     .bg-lines {
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: 0;
       background-image: repeating-linear-gradient(
         115deg,
-        rgba(200, 30, 45, 0.08) 0px,
-        rgba(200, 30, 45, 0.08) 1px,
-        transparent 1px,
-        transparent 90px
+        transparent 0px,
+        transparent 70px,
+        rgba(220, 40, 55, 0.35) 70px,
+        rgba(220, 40, 55, 0.35) 72px
       );
-      background-size: 200% 200%;
-      animation: driftLines 18s linear infinite;
+      background-size: 300px 300px;
+      animation: driftLines 12s linear infinite;
     }
     @keyframes driftLines {
-      0%   { background-position: 0% 0%; }
-      100% { background-position: 100% 100%; }
+      0%   { background-position: 0 0; }
+      100% { background-position: 300px 300px; }
+    }
+    .bg-logo {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 900px;
+      max-width: 140vw;
+      height: auto;
+      opacity: 0.08;
+      z-index: 0;
+      pointer-events: none;
     }
     .content {
       position: relative;
@@ -45,11 +60,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-    img.logo {
-      width: 140px;
-      height: auto;
-      margin-bottom: 24px;
+      justify-content: center;
     }
     h1 {
       font-size: 1.5rem;
@@ -68,8 +79,8 @@
 </head>
 <body>
   <div class="bg-lines"></div>
+  <img class="bg-logo" src="logo.png" alt="">
   <div class="content">
-    <img class="logo" src="logo.png" alt="St. Andrew's Logo">
     <h1>St. Andrew's TDS is currently undergoing repair/updates.<br>Check back soon.</h1>
   </div>
   <footer>Designed By Echovant</footer>
